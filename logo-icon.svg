@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .logo-icon-gold { fill: #DDC76B; }
+      .logo-icon-white { fill: #fff; }
+      .logo-icon-green { fill: #4b7f4b; }
+    </style>
+  </defs>
+  <!-- Background Circle -->
+  <circle class="logo-icon-gold" cx="250" cy="250" r="240"/>
+  <!-- Giraffe Body -->
+  <ellipse class="logo-icon-white" cx="250" cy="300" rx="90" ry="110"/>
+  <!-- Giraffe Neck -->
+  <rect class="logo-icon-white" x="230" y="120" width="40" height="200"/>
+  <!-- Giraffe Head -->
+  <ellipse class="logo-icon-white" cx="250" cy="100" rx="50" ry="60"/>
+  <!-- Giraffe Ears -->
+  <ellipse class="logo-icon-white" cx="210" cy="60" rx="15" ry="25"/>
+  <ellipse class="logo-icon-white" cx="290" cy="60" rx="15" ry="25"/>
+  <!-- Giraffe Horns -->
+  <line x1="220" y1="50" x2="200" y2="10" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <line x1="280" y1="50" x2="300" y2="10" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <!-- Giraffe Snout -->
+  <ellipse class="logo-icon-white" cx="250" cy="120" rx="25" ry="20"/>
+  <!-- Green Lower Body -->
+  <ellipse class="logo-icon-green" cx="250" cy="350" rx="110" ry="100"/>
+  <!-- Giraffe Legs -->
+  <rect class="logo-icon-green" x="190" y="350" width="20" height="80"/>
+  <rect class="logo-icon-green" x="220" y="370" width="20" height="70"/>
+  <rect class="logo-icon-green" x="280" y="370" width="20" height="70"/>
+  <rect class="logo-icon-green" x="310" y="350" width="20" height="80"/>
+</svg>
