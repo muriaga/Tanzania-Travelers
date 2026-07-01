@@ -1,0 +1,855 @@
+:root {
+    --primary-color: #DDC76B;
+    --secondary-color: #4B7F4B;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --bg-light: #FAFAFA;
+    --bg-white: #FFFFFF;
+    --border-color: #EEEEEE;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== NAVIGATION ==================== */
+.navbar {
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 45px;
+    width: auto;
+}
+
+.nav-logo .logo-black {
+    display: none;
+}
+
+.navbar.scrolled .nav-logo .logo-colored {
+    display: none;
+}
+
+.navbar.scrolled .nav-logo .logo-black {
+    display: block;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    overflow: hidden;
+    color: var(--bg-white);
+}
+
+.hero-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+}
+
+.mountain-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    left: 5%;
+}
+
+.mountain-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+    clip-path: polygon(0% 100%, 50% 10%, 100% 100%);
+    left: 30%;
+}
+
+.mountain-3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.25) 0%, transparent 65%);
+    clip-path: polygon(0% 100%, 50% 20%, 100% 100%);
+    right: 5%;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--bg-white);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== FEATURED ROUTES ==================== */
+.featured-routes {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+}
+
+.featured-routes h2,
+.why-us h2,
+.about h2,
+.contact h2,
+.faqs-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.route-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.route-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.route-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.route-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.route-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.learn-more:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* ==================== WHY CHOOSE US ==================== */
+.why-us {
+    padding: 80px 20px;
+    background-color: var(--bg-white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(221, 199, 107, 0.1) 0%, rgba(75, 127, 75, 0.1) 100%);
+    transition: var(--transition);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(221, 199, 107, 0.15) 0%, rgba(75, 127, 75, 0.15) 100%);
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.feature p {
+    color: var(--text-light);
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+/* ==================== CONTACT SECTION ==================== */
+.contact {
+    padding: 80px 20px;
+    background-color: var(--bg-white);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.contact-item h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-item a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+
+/* ==================== KILIMANJARO PAGE ==================== */
+.kilimanjaro-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--bg-white);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.kilimanjaro-hero .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.kilimanjaro-hero .hero-content p {
+    font-size: 1.3rem;
+}
+
+.routes-section {
+    padding: 60px 20px;
+    background-color: var(--bg-light);
+}
+
+.route-detailed {
+    margin-bottom: 4rem;
+    background-color: var(--bg-white);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.route-detailed h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.route-description {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.route-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+.route-option {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.route-option h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.option-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.pricing-box,
+.quick-facts {
+    background-color: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.pricing-box h4,
+.quick-facts h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.price-per {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.quick-facts ul {
+    list-style: none;
+    text-align: left;
+}
+
+.quick-facts li {
+    padding: 0.5rem 0;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quick-facts i {
+    color: var(--secondary-color);
+}
+
+.itinerary {
+    margin-bottom: 2rem;
+}
+
+.itinerary h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.day-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--bg-white);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.day-number {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--bg-white);
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+    height: fit-content;
+}
+
+.day-content h5 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.day-content p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.inclusions-exclusions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.inclusions,
+.exclusions {
+    background-color: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.inclusions h4,
+.exclusions h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.inclusions ul,
+.exclusions ul {
+    list-style: none;
+}
+
+.inclusions li,
+.exclusions li {
+    padding: 0.5rem 0;
+    color: var(--text-dark);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.inclusions i {
+    color: var(--secondary-color);
+}
+
+.exclusions i {
+    color: #ccc;
+}
+
+.book-now {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--bg-white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(75, 127, 75, 0.3);
+}
+
+.book-now:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(75, 127, 75, 0.4);
+}
+
+/* ==================== FAQ SECTION ==================== */
+.faqs-section {
+    padding: 80px 20px;
+    background-color: var(--bg-white);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.faq-item h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ==================== BACK TO TOP BUTTON ==================== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--bg-white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--bg-white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-white);
+        padding: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .featured-routes h2,
+    .why-us h2,
+    .about h2,
+    .contact h2,
+    .faqs-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .routes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .route-options {
+        grid-template-columns: 1fr;
+    }
+
+    .option-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inclusions-exclusions {
+        grid-template-columns: 1fr;
+    }
+
+    .mountain-1,
+    .mountain-2,
+    .mountain-3 {
+        display: none;
+    }
+
+    .kilimanjaro-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .nav-logo {
+        gap: 5px;
+    }
+
+    .nav-logo img {
+        height: 35px;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .featured-routes h2,
+    .why-us h2,
+    .about h2,
+    .contact h2,
+    .faqs-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .route-card {
+        padding: 1rem;
+    }
+
+    .feature {
+        padding: 1rem;
+    }
+
+    .feature i {
+        font-size: 2rem;
+    }
+
+    .contact-item {
+        padding: 1rem;
+    }
+
+    .route-option {
+        padding: 1rem;
+    }
+
+    .faq-item {
+        padding: 1rem;
+    }
+
+    .faq-item h4 {
+        font-size: 1rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+    }
+}
